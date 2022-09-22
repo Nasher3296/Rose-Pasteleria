@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen&display=swap');
+
+:root{
+    --font-family-brand: 'Qwitcher Grypen', cursive;
+    --font-family-titles: 'Qwitcher Grypen', cursive;
+    --font-family-body: 'Qwitcher Grypen', cursive;
+
+    --bg-color-nav: #fecde0;
+}
+/* *, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} */
+
+
+.bg-nav{
+    background-color: var(--bg-color-nav);
+}
+
+.brand-font{
+    font-family: var(--font-family-titles);
+    font-size: 4rem;
+}
