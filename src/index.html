@@ -1,52 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/7445fb44f6.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Rose Pasteleria</title>
-</head>
-<body>
-    <header class="d-flex sticky-top flex-column flex-md-row align-items-center h4 p-3 px-md-4 mb-0 bg-nav">
-        <h5 class="brand-font">Rose</h5>
-        <nav class="navbar my-2 my-md-0 ml-md-auto mr-md-3">
-            <a class="ml-3 text-dark" href="">Mis pedidos</a>
-            <a class="ml-3 text-dark" href="">Productos</a>
-            <a class="ml-3 text-dark" href=""><i class="fa fa-shopping-basket" aria-hidden="true"></i></i></a>
-        </nav>
-    </header>
-    <main class="container-fluid p-0 m-0">
-        <section id="welcome" class="">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="d-block w-100" src="https://definicion.de/wp-content/uploads/2013/02/pasteleria-1.jpg" alt="First slide">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="https://www.ceac.es/sites/default/files/2019-08/ceac-27-03-2019-reposteria.jpg.webp" alt="Second slide">                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="https://portales.vilbo.com/files/uploads/images/articulos/book%20dulcypas%2018/targarona-vitrina-dulcypasbook.jpg" alt="Third slide">
-                  </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
-        </section>
-    </main>
-    <footer>
 
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/7445fb44f6.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Rose Pasteleria</title>
+</head>
+
+<body id="body" onscroll="scrolling()">
+  <header class="d-flex fixed-top flex-column flex-md-row align-items-center py-md-3 px-md-4 bg-nav">
+    <h5 class="brand-font nav-brand-fontsize">Rose</h5>
+    <nav class="navbar my-2 my-md-0 ml-md-auto mr-md-3">
+      <a class="ml-3 text-dark" href="">Mis pedidos</a>
+      <a class="ml-3 text-dark" href="">Productos</a>
+      <a class="ml-3 text-dark" href="" id="navShoppingCartIcon"><i class="fa fa-shopping-basket"
+          aria-hidden="true"></i></i></a>
+    </nav>
+  </header>
+  <main id="main" class="container-fluid p-0">
+    <section id="welcome" class="h-100">
+      <div id="welcomeFloatBrandContainer">
+        <h2 class="brand-font" id="welcomeFloatBrand">Rose</h2>
+      </div>
+      <div id="carouselExampleControls" class="carousel slide overflow-hidden max-vh-100" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="https://definicion.de/wp-content/uploads/2013/02/pasteleria-1.jpg"
+              alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100"
+              src="https://www.ceac.es/sites/default/files/2019-08/ceac-27-03-2019-reposteria.jpg.webp"
+              alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100"
+              src="https://portales.vilbo.com/files/uploads/images/articulos/book%20dulcypas%2018/targarona-vitrina-dulcypasbook.jpg"
+              alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </section>
+    <section id="outstanding">
+      <h3>Productos destacados</h3>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus nam sequi illum omnis voluptate, quia quas
+      accusantium doloremque, dolores labore in cumque, quae ullam ipsa sint delectus quisquam cum. Dolorem?
+      Fuga maxime corrupti suscipit? Asperiores voluptatibus aut rerum ipsam aliquid minima saepe qui dolore in earum
+      atque quaerat sit omnis sapiente, maxime aspernatur amet exercitationem hic eius, assumenda iste quod?
+      Sunt, facilis consequatur excepturi perspiciatis illo dolor dolorem nulla, asperiores odio ab autem facere
+      repellendus accusamus obcaecati rem? Pariatur excepturi autem, modi inventore velit vero! Cumque culpa provident
+      temporibus. Molestiae!
+      Ratione officia possimus recusandae deserunt repellendus, doloremque architecto eius ipsum. Porro aliquam delectus
+      qui saepe. Velit quibusdam aliquam debitis, alias, tempora odit similique porro architecto sint voluptatum,
+      eveniet ducimus laborum?
+      Ex nisi quibusdam temporibus deleniti quisquam dignissimos, sint repellendus. Quasi necessitatibus quam placeat
+      eaque velit rem deserunt aperiam vero! Ut necessitatibus sunt ratione possimus animi, fugiat quis officiis.
+      Eligendi, sequi.
+      Tenetur, cumque accusantium quam quia impedit, numquam dignissimos delectus corrupti repudiandae esse ab animi
+      facilis saepe aspernatur excepturi, inventore nemo? Maxime rem autem possimus eligendi omnis officia accusantium
+      similique laboriosam?
+      Facilis ullam, repellendus placeat adipisci, similique a quidem obcaecati et quo minima iure asperiores, aut
+      reprehenderit ad deserunt non nam! Nemo, cupiditate dignissimos totam rem temporibus eum soluta illo corrupti?
+      Quod, laboriosam quia? Deleniti accusantium, sint earum veniam itaque inventore at est, dolorum corporis natus
+      repudiandae cum molestias illum quas. Deleniti, doloribus odit! Veniam hic neque asperiores laboriosam ipsa iure.
+      Deserunt assumenda dolor molestiae beatae mollitia eaque, nam, blanditiis sint, perferendis quam voluptates
+      voluptate rerum deleniti cumque iusto neque. Obcaecati aperiam corrupti laboriosam atque sapiente accusantium
+      tempore sit magnam vel?
+      Recusandae, totam commodi aut eveniet ratione placeat amet rem fugiat autem doloribus officia illo reiciendis
+      facere! Fugiat quo cupiditate omnis quis voluptatem molestias saepe aperiam eaque ad voluptas. Eius, impedit!
+    </section>
+  </main>
+  <footer>
+  </footer>
+  <script type="text/javascript" src="index.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
