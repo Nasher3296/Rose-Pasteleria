@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "price": 4000,
+        "name": "Torta simple",
+        "desc": "una torta de un nivel",
+        "unit": 1,
+        "category": "tortas"
+    },
+    {
+        "id": 2,
+        "price": 5500,
+        "name": "Torta doble",
+        "desc": "una torta de dos niveles",
+        "unit": 1,
+        "category": "tortas"
+    },
+    {
+        "id": 3,
+        "price": 6500,
+        "name": "Torta triple",
+        "desc": "una torta de tres niveles",
+        "unit": 1,
+        "category": "tortas"
+    },
+    {
+        "id": 4,
+        "price": 350,
+        "name": "Oreos cubiertas negro",
+        "desc": "Oreos bañadas en chocolate negro",
+        "unit": 12,
+        "category": "cookie"
+    },
+    {
+        "id": 5,
+        "price": 350,
+        "name": "Oreos cubiertas blanco",
+        "desc": "Oreos bañadas en chocolate blanco",
+        "unit": 12,
+        "category": "cookie"
+    },
+    {
+        "id": 6,
+        "price": 500,
+        "name": "Alfajores de maicena",
+        "desc": "Media docena de alfajores de maicena",
+        "unit": 6,
+        "category": "cookie"
+    },
+    {
+        "id": 7,
+        "price": 1500,
+        "name": "Huevo de pascua Chico",
+        "desc": "Huevo de pascua 15cm",
+        "unit": 1,
+        "category": "huevo"
+    },
+    {
+        "id": 8,
+        "price": 2500,
+        "name": "Huevo de pascua Medio",
+        "desc": "Huevo de pascua 25cm",
+        "unit": 1,
+        "category": "huevo"
+    },
+    {
+        "id": 9,
+        "price": 4000,
+        "name": "Huevo de pascua Grande",
+        "desc": "Huevo de pascua 40cm",
+        "unit": 1,
+        "category": "huevo"
+    }
+]

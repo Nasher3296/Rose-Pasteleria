@@ -12,8 +12,8 @@
   <title>Rose Pasteleria</title>
 </head>
 
-<body id="body" onscroll="scrolling()">
-  <header class="d-flex fixed-top flex-column flex-md-row align-items-center py-md-3 px-md-4 bg-nav">
+<body id="body">
+  <header class="d-flex sticky-top flex-column flex-md-row align-items-center h4 mb-0 py-md-3 px-md-4 bg-nav">
     <h5 class="brand-font nav-brand-fontsize">Rose</h5>
     <nav class="navbar my-2 my-md-0 ml-md-auto mr-md-3">
       <a class="ml-3 text-dark" href="">Mis pedidos</a>
@@ -24,21 +24,27 @@
   </header>
   <main id="main" class="container-fluid p-0">
     <section id="welcome" class="h-100">
-      <div id="welcomeFloatBrandContainer">
-        <h2 class="brand-font" id="welcomeFloatBrand">Rose</h2>
-      </div>
       <div id="carouselExampleControls" class="carousel slide overflow-hidden max-vh-100" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
+            <div class="welcomeFloatBrandContainer">
+              <h2 class="brand-font welcomeFloatBrand">Rose</h2>
+            </div>
             <img class="d-block w-100" src="https://definicion.de/wp-content/uploads/2013/02/pasteleria-1.jpg"
               alt="First slide">
           </div>
           <div class="carousel-item">
+            <div class="welcomeFloatBrandContainer">
+              <h2 class="brand-font welcomeFloatBrand">Rose</h2>
+            </div>
             <img class="d-block w-100"
               src="https://www.ceac.es/sites/default/files/2019-08/ceac-27-03-2019-reposteria.jpg.webp"
               alt="Second slide">
           </div>
           <div class="carousel-item">
+            <div class="welcomeFloatBrandContainer">
+              <h2 class="brand-font welcomeFloatBrand">Rose</h2>
+            </div>
             <img class="d-block w-100"
               src="https://portales.vilbo.com/files/uploads/images/articulos/book%20dulcypas%2018/targarona-vitrina-dulcypasbook.jpg"
               alt="Third slide">
@@ -53,37 +59,60 @@
       </div>
     </section>
     <section id="outstanding">
-      <h3>Productos destacados</h3>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus nam sequi illum omnis voluptate, quia quas
-      accusantium doloremque, dolores labore in cumque, quae ullam ipsa sint delectus quisquam cum. Dolorem?
-      Fuga maxime corrupti suscipit? Asperiores voluptatibus aut rerum ipsam aliquid minima saepe qui dolore in earum
-      atque quaerat sit omnis sapiente, maxime aspernatur amet exercitationem hic eius, assumenda iste quod?
-      Sunt, facilis consequatur excepturi perspiciatis illo dolor dolorem nulla, asperiores odio ab autem facere
-      repellendus accusamus obcaecati rem? Pariatur excepturi autem, modi inventore velit vero! Cumque culpa provident
-      temporibus. Molestiae!
-      Ratione officia possimus recusandae deserunt repellendus, doloremque architecto eius ipsum. Porro aliquam delectus
-      qui saepe. Velit quibusdam aliquam debitis, alias, tempora odit similique porro architecto sint voluptatum,
-      eveniet ducimus laborum?
-      Ex nisi quibusdam temporibus deleniti quisquam dignissimos, sint repellendus. Quasi necessitatibus quam placeat
-      eaque velit rem deserunt aperiam vero! Ut necessitatibus sunt ratione possimus animi, fugiat quis officiis.
-      Eligendi, sequi.
-      Tenetur, cumque accusantium quam quia impedit, numquam dignissimos delectus corrupti repudiandae esse ab animi
-      facilis saepe aspernatur excepturi, inventore nemo? Maxime rem autem possimus eligendi omnis officia accusantium
-      similique laboriosam?
-      Facilis ullam, repellendus placeat adipisci, similique a quidem obcaecati et quo minima iure asperiores, aut
-      reprehenderit ad deserunt non nam! Nemo, cupiditate dignissimos totam rem temporibus eum soluta illo corrupti?
-      Quod, laboriosam quia? Deleniti accusantium, sint earum veniam itaque inventore at est, dolorum corporis natus
-      repudiandae cum molestias illum quas. Deleniti, doloribus odit! Veniam hic neque asperiores laboriosam ipsa iure.
-      Deserunt assumenda dolor molestiae beatae mollitia eaque, nam, blanditiis sint, perferendis quam voluptates
-      voluptate rerum deleniti cumque iusto neque. Obcaecati aperiam corrupti laboriosam atque sapiente accusantium
-      tempore sit magnam vel?
-      Recusandae, totam commodi aut eveniet ratione placeat amet rem fugiat autem doloribus officia illo reiciendis
-      facere! Fugiat quo cupiditate omnis quis voluptatem molestias saepe aperiam eaque ad voluptas. Eius, impedit!
+      <h3 class="title-font h2-custom text-center">Productos destacados</h3>
+      <div class="container">
+        <div id="outstandingProductsContainer" class="row g-4 row-cols-lg-5 row-cols-2 row-cols-md-3">
+          <div class="col">
+            <div class="card card-product">
+              <div class="card-body">
+  
+                <div class="text-center position-relative ">
+                  <div class=" position-absolute top-0 start-0">
+                    <span class="badge bg-danger">Sale</span>
+                  </div>
+                  <a href="#!"> <img src="assets/images/products/product-img-1.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid"></a>
+  
+                  <div class="card-product-action">
+                    <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="bi bi-eye" data-bs-toggle="tooltip" data-bs-html="true" aria-label="Quick View"></i></a>
+                    <a href="#!" class="btn-action" data-bs-toggle="tooltip" data-bs-html="true" aria-label="Wishlist"><i class="bi bi-heart"></i></a>
+                    <a href="#!" class="btn-action" data-bs-toggle="tooltip" data-bs-html="true" aria-label="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                  </div>
+  
+                </div>
+                <div class="text-small mb-1"><a href="#!" class="text-decoration-none text-muted"><small>Snack &amp;
+                      Munchies</small></a></div>
+                <h2 class="fs-6"><a href="./pages/shop-single.html" class="text-inherit text-decoration-none">Haldiram's
+                    Sev Bhujia</a></h2>
+                <div>
+  
+                  <small class="text-warning"> <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i></small> <span class="text-muted small">4.5(149)</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <div><span class="text-dark">$18</span> <span class="text-decoration-line-through text-muted">$24</span>
+                  </div>
+                  <div><a href="#!" class="btn btn-primary btn-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg> Add</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
   <footer>
   </footer>
-  <script type="text/javascript" src="index.js"></script>
+
+
+
+  
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -93,6 +122,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 
 </html>
