@@ -65,19 +65,30 @@
     filter: blur(1.5rem);
 }
 
+.productName{
+    z-index: 100;
+}
 
 .outstanding-card{
-    width: 10rem;
-    height: 10rem;
+    width: 7rem;
+    height: 7rem;
     background-color: transparent;
     position: absolute;
     transform: rotate(-45deg);
-    top: -5rem;
-    left: -5rem;
+    top: -3.5rem;
+    right: -3.5rem;
     padding: 15px;
-    border: 50px solid transparent;
-    border-bottom: 50px solid rgb(208, 83, 196);
-    overflow: hidden;
+    border: 20px solid transparent;
+    border-left: 20px solid rgb(208, 83, 196);
+}
+
+.outstanding-text{
+    position: absolute;
+    transform: rotate(90deg);
+    
+    top: 1.7rem;
+    right: 2.7rem;
+    color: white;
 }
 
 
