@@ -6,6 +6,7 @@
     --font-family-body: 'Qwitcher Grypen', cursive;
 
     --bg-color-nav: #fecde0;
+    --bg-color-sec: #f9acc9;
 }
 
 /* *, ::before, ::after{
@@ -20,6 +21,10 @@
     /* background-color: transparent; */
 }
 
+nav > a{
+    margin-left: 2rem;
+}
+
 .brand-font {
     font-family: var(--font-family-brand);
 }
@@ -28,14 +33,31 @@
     font-family: var(--font-family-titles);
 }
 
+h5.nav-brand-fontsize {
+    font-size: max(6vw,70px);
+    margin-bottom: 0;
+}
 .nav-brand-fontsize {
-    font-size: 4rem;
+    font-size: max(1.5vw,18px);
+}
+
+nav a{
+    color: black;
+}
+
+nav a:hover{
+    color: white;
 }
 
 .max-vh-100 {
     max-height: 100vh;
 }
-
+section#welcome{
+    scroll-margin-top: 0;
+}
+section{
+    scroll-margin-top: 12rem;
+}
 .welcomeFloatBrandContainer{
     height: 100%;
     width: 100%;
@@ -55,6 +77,10 @@
     padding-bottom: 20%;
 }
 
+#welcome img{
+    opacity: 0.4;
+}
+
 #carouselExampleControls::after{
     content: "";
     width: 100%;
@@ -70,24 +96,24 @@
 }
 
 .outstanding-card{
-    width: 7rem;
-    height: 7rem;
+    width: 10rem;
+    height: 10rem;
     background-color: transparent;
     position: absolute;
     transform: rotate(-45deg);
-    top: -3.5rem;
-    right: -3.5rem;
+    top: -5rem;
+    right: -5rem;
     padding: 15px;
-    border: 20px solid transparent;
-    border-left: 20px solid rgb(208, 83, 196);
+    border: 30px solid transparent;
+    border-left: 30px solid rgb(208, 83, 196);
 }
 
 .outstanding-text{
     position: absolute;
     transform: rotate(90deg);
-    
-    top: 1.7rem;
-    right: 2.7rem;
+    font-size: 20px;
+    top: 2.2rem;
+    right: 4.3rem;
     color: white;
 }
 
@@ -96,9 +122,56 @@
     font-size: calc(40px + 1.5vw);
 }
 
-@media (max-width: 800px) {
+.divider{
+    background-color: var(--bg-color-nav);
+    height: 2px;
+    width: 92%;
+
+    margin: 2rem auto;
+}
+
+.my-order-list .row{
+    background-color: var(--bg-color-nav);
+    padding: 0.5rem;
+    display: flex;
+}
+
+.main-col-mol{
+   width: 1000px;
+}
+
+.my-order-list .row{
+    border-bottom: 1px solid white;
+}
+
+.my-order-list .row:last-of-type{
+    border-bottom: none;
+}
+
+.footer-elem{
+    white-space: nowrap;
+    font-size: min(calc(12px + 1.5vw),26px);
+}
+
+@media (max-width: 768px) {
     .welcomeFloatBrand{
         font-size: 10rem;
+    }
+}
+
+@media (min-width: 769px){
+    header h5{
+        width: auto;
+    }
+    header{
+        justify-content: space-between;
+    }
+    nav{
+        justify-content: right;
+        width: max-content;
+    }
+    .myOrder{
+        justify-content: space-between;
     }
 }
 

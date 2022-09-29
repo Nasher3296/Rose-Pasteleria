@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "code": "ABCD-123-EFG1",
+        "client-id": 1,
+        "date": "22/09/2022",
+        "products": [
+            {
+                "product-id": 1,
+                "amount": 3
+            },
+            {
+                "product-id": 2,
+                "amount": 2
+            }
+        ]
+    }
+]

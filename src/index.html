@@ -7,24 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/7445fb44f6.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <title>Rose Pasteleria</title>
 </head>
 
 <body id="body">
-  <header class="d-flex sticky-top flex-column flex-md-row align-items-center h4 mb-0 py-md-3 px-md-4 bg-nav">
-    <h5 class="brand-font nav-brand-fontsize">Rose</h5>
-    <nav class="navbar my-2 my-md-0 ml-md-auto mr-md-3">
-      <a class="ml-3 text-dark" href="">Mis pedidos</a>
-      <a class="ml-3 text-dark" href="">Productos</a>
-      <a class="ml-3 text-dark" href="" id="navShoppingCartIcon"><i class="fa fa-shopping-basket"
+  <header class="d-flex sticky-top flex-column flex-md-row align-items-center fs-3 mb-0 py-md-0 px-md-4 bg-nav">
+    <h5 class="brand-font nav-brand-fontsize"><a class="text-decoration-none text-dark" href="#welcome">Rose</a></h5>
+    <nav class="navbar my-2 my-md-0 ml-md-auto mr-md-0 nav-brand-fontsize">
+      <a class="text-decoration-none p-10" href="#myOrders">Mis pedidos</a>
+      <a class="text-decoration-none p-10" href="#products">Productos</a>
+      <a class="text-decoration-none p-10" href="" id="navShoppingCartIcon"><i class="fa fa-shopping-basket"
           aria-hidden="true"></i></i></a>
     </nav>
   </header>
   <main id="main" class="container-fluid p-0">
     <section id="welcome" class="h-100">
-      <div id="carouselExampleControls" class="carousel slide overflow-hidden max-vh-100" data-ride="carousel">
+      <div id="carouselExampleControls" class="carousel slide  overflow-hidden max-vh-100" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="welcomeFloatBrandContainer">
@@ -50,12 +50,16 @@
               alt="Third slide">
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="sr-only">Next</span>
-        </a>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </section>
     <section id="outstanding">
@@ -65,24 +69,101 @@
         </div>
       </div>
     </section>
+    <div class="divider"></div>
+    <section id="myOrders">
+      <h3 class="title-font h2-custom text-center">Mis pedidos</h3>
+      <div class="container py-5 d-flex flex-column flex-md-row align-items-center w-100 myOrder">
+
+        <!-- Dejo puesto un input de ejemplo. El form queda comentado para que no haga redirecciones -->
+        <!-- <form method="post"> -->
+        <fieldset class="">
+          <label for="order-code" class="fs-4">Codigo</label>
+          <input value="ABCD-123-EFG1" name="order-code" id="order-code" type="text" class="text-center"
+            placeholder="XXXX-XXX-XXXX" pattern="^\w{4}-\w{3}-\w{4}">
+          <button type="submit" class="btn btn-primary"
+            onclick="searchOrder(document.getElementById('order-code').value)">Buscar</button>
+        </fieldset>
+        <!-- </form> -->
+        <p class="fs-5 w-50">Ingresa el codigo de tu pedido para obtener informacion sobre el mismo</p>
+      </div>
+      <div class="container" id="myOrderListMainContainer">
+      </div>
+    </section>
+    <div class="divider"></div>
+    <section id="products">
+      <h3 class="title-font h2-custom text-center">Productos</h3>
+      <div class="top-bar container my-2">
+        <div class="row">
+          <div class="col">
+          </div>
+          <div class="col-auto">
+            <div class="order-products">
+              <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
+              <label class="btn btn-outline-primary descending" for="btn-check-outlined">Mayor precio</label><br>
+            </div>
+          </div>
+          <div class="col col-auto">
+            <div class="search">
+              <input type="text" placeholder="Buscar..." class="p-1 m-0">
+              <button type="submit" class="btn btn-primary px-2 m-0" ><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="products-list row g-4 row-cols-lg-3 row-cols-2 row-cols-md-3"></div>
+
+      </div>
+      <div class="container d-flex justify-content-center mt-2">
+
+        <nav aria-label="Page navigation example align-self-center">
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">&lt</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">&gt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
   </main>
-  <footer>
+  <footer class="bg-light border-top py-md-4">
+    <div class="container">
+      <div class="footer-elem d-flex flex-column flex-sm-row justify-content-space-between">
+        <div class="sm-col row mx-auto">
+          <a class="text-dark text-decoration-none" href="https://www.google.com/maps/place/Flores/@-34.6278236,-58.4678226,17z/data=!3m1!4b1!4m5!3m4!1s0x95bcc9899da29495:0x3fe020b4f625c300!8m2!3d-34.6278236!4d-58.4656286" target="_blank">
+            <i class="fa fa-map-marker" aria-hidden="true"></i> Flores
+          </a>
+      </div>
+      <div class="footer-elem sm-col row mx-auto">
+        <a class="text-dark text-decoration-none" href="https://www.instagram.com/rose_pasteleria_fotografia/" target="_blank">
+          <i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp
+        </a>
+      </div>
+        <div class="footer-elem sm-col row mx-auto">
+            <a class="text-dark text-decoration-none" href="https://www.instagram.com/rose_pasteleria_fotografia/" target="_blank">
+              <i class="fa-brands fa-instagram"></i> rose_pasteleria_fotografia
+            </a>
+        </div>
+      </div>
+    </div>
   </footer>
 
 
 
-  
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="index.js"></script>
 </body>
 
 </html>
