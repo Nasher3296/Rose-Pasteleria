@@ -80,7 +80,7 @@
           <label for="order-code" class="fs-4">Codigo</label>
           <input value="ABCD-123-EFG1" name="order-code" id="order-code" type="text" class="text-center"
             placeholder="XXXX-XXX-XXXX" pattern="^\w{4}-\w{3}-\w{4}">
-          <button type="submit" class="btn btn-primary"
+          <button type="submit" class="btn btn-primary" id="orderBtn"
             onclick="searchOrder(document.getElementById('order-code').value)">Buscar</button>
         </fieldset>
         <!-- </form> -->
@@ -163,7 +163,8 @@
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script type="text/javascript" src="index.js"></script>
+  <script type="module" src="index.js"></script>
+  <script type="text/javascript" src="./lib/other.js"></script>
 </body>
 
 </html>
