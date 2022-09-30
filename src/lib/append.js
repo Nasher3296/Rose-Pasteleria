@@ -46,3 +46,11 @@ export function appendProductsList(p) {
             </div> 
         `)
 }
+
+export function appendProductsNav(n){
+    $('#paginationUl').append(`<li class="page-item active" id="paginationLi${1}"><a class="page-link">${1}</a></li>`);
+    for(let i = 1 ; i < n ; i++){
+        $('#paginationUl').append(`<li class="page-item" id="paginationLi${i+1}"><a class="page-link">${i+1}</a></li>`);
+    }
+    $('#paginationUl').append(`<li class="page-item"><a class="page-link">&gt</a></li>`);
+}

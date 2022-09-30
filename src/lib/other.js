@@ -1,4 +1,4 @@
-function searchOrder(code){
+export function searchOrder(code){
     fetch("./db/orders.JSON")
         .then(res => res.json())
         .then(data => {

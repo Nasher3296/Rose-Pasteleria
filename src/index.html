@@ -79,9 +79,8 @@
         <fieldset class="">
           <label for="order-code" class="fs-4">Codigo</label>
           <input value="ABCD-123-EFG1" name="order-code" id="order-code" type="text" class="text-center"
-            placeholder="XXXX-XXX-XXXX" pattern="^\w{4}-\w{3}-\w{4}">
-          <button type="submit" class="btn btn-primary" id="orderBtn"
-            onclick="searchOrder(document.getElementById('order-code').value)">Buscar</button>
+            placeholder="XXXX-XXX-XXXX" pattern="^\w{4}-\w{3}-\w{4}" oninvalid="this.setCustomValidity('Ingrese un codigo valido')">
+          <button type="submit" class="btn btn-primary" id="orderBtn">Buscar</button>
         </fieldset>
         <!-- </form> -->
         <p class="fs-5 w-50">Ingresa el codigo de tu pedido para obtener informacion sobre el mismo</p>
@@ -111,41 +110,36 @@
         </div>
       </div>
       <div class="container">
-        <div class="products-list row g-4 row-cols-lg-3 row-cols-2 row-cols-md-3"></div>
-
+        <div class="products-list row g-4 row-cols-lg-4 row-cols-md-3 row-cols-2"></div>
       </div>
       <div class="container d-flex justify-content-center mt-2">
 
         <nav aria-label="Page navigation example align-self-center">
-          <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">&lt</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">&gt</a></li>
+          <ul class="pagination" id="paginationUl">
+            <li class="page-item"><a class="page-link">&lt</a></li>
           </ul>
         </nav>
       </div>
     </section>
   </main>
-  <footer class="bg-light border-top py-md-4">
+  <footer class="bg-light border-top py-md-2">
     <div class="container">
-      <div class="footer-elem d-flex flex-column flex-sm-row justify-content-space-between">
+      <div class="footer-elem d-flex flex-column flex-sm-row">
         <div class="sm-col row mx-auto">
           <a class="text-dark text-decoration-none" href="https://www.google.com/maps/place/Flores/@-34.6278236,-58.4678226,17z/data=!3m1!4b1!4m5!3m4!1s0x95bcc9899da29495:0x3fe020b4f625c300!8m2!3d-34.6278236!4d-58.4656286" target="_blank">
             <i class="fa fa-map-marker" aria-hidden="true"></i> Flores
           </a>
       </div>
-      <div class="footer-elem sm-col row mx-auto">
+      <div class="sm-col row mx-auto">
+        <a class="text-dark text-decoration-none" href="https://www.instagram.com/rose_pasteleria_fotografia/" target="_blank">
+          <i class="fa-brands fa-instagram"></i> rose_pasteleria_fotografia
+        </a>
+    </div>
+      <div class="sm-col row mx-auto">
         <a class="text-dark text-decoration-none" href="https://api.whatsapp.com/send?phone=1163651299&text=Realizar%20un%20pedido" target="_blank">
           <i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp
         </a>
       </div>
-        <div class="footer-elem sm-col row mx-auto">
-            <a class="text-dark text-decoration-none" href="https://www.instagram.com/rose_pasteleria_fotografia/" target="_blank">
-              <i class="fa-brands fa-instagram"></i> rose_pasteleria_fotografia
-            </a>
-        </div>
       </div>
     </div>
   </footer>
@@ -164,7 +158,6 @@
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script type="module" src="index.js"></script>
-  <script type="text/javascript" src="./lib/other.js"></script>
 </body>
 
 </html>
