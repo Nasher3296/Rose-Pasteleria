@@ -1,6 +1,6 @@
-import {fetchOutstandingProducts, fetchAllProducts, fetchAmountOfProducts} from './lib/fetch.js';
-import {searchOrder} from './lib/other.js';
-import * as util from './lib/util.js';
+import { fetchOutstandingProducts, fetchAllProducts, fetchAmountOfProducts } from './lib/fetch.js';
+import { searchOrder } from './lib/other.js';
+
 
 $(document).ready(function () {
     //Momentaneamente los productos destacados son 3 elegidos aleatoriamente
@@ -10,35 +10,40 @@ $(document).ready(function () {
 });
 
 
-$('#orderBtn').click(function(){
+$('#orderBtn').click(function () {
     searchOrder($('#order-code').val());
 })
 
+$('#paginationUl').click(function (event) {
+    let currentElement = $('#productsIndex');
+    let current = parseInt(currentElement.html());
+    let clicked = $('#'+event.target.id); //necesito la selecicon de jquery porque no funciona con el event.target
+    let indexClicked = clicked.parent().index();
+    let list = $(this).children();
+    let size = list.length;
+    let prev = 0;
+    let next = size - 1;
+    //caso donde se esta en el extremo y se quiere avanzar
+    list.removeClass("active");
+    console.log('current :>> ', current);
+    if(((indexClicked == prev && current == 1) || (indexClicked == next && current == size - 2))){ 
+        $(this).children().get(current).classList.add("active");
+        fetchAllProducts(current);
+    }else if(indexClicked == prev){
+        currentElement.html(--current);
+        fetchAllProducts(current);
+        $(this).children().get(current).classList.add("active");
+    }else if(indexClicked == next){
+        currentElement.html(++current);
+        fetchAllProducts(current);
+        $(this).children().get(current).classList.add("active");
+    }else{
+        currentElement.html(indexClicked);
+        fetchAllProducts(indexClicked);
+        $(this).children().get(indexClicked).classList.add("active");
+    }
 
 
-
-$('#paginationUl').click( function(event) {
-    let lastActive = $("#paginationUl .active").index();
-    let nextActive = $('#paginationUl li').index();
-    console.log("last: "+lastActive);
-    console.log("mext: "+nextActive);
-    $('#paginationUl li').removeClass("active");
-    
-    let target = util.getEventTarget(event);
-    
-    switch (target.innerHTML[1]) {
-        case 'l':
-            fetchAllProducts(2);
-            // target.parentNode.classList.add("active");
-            break;
-        case 'g':
-            fetchAllProducts(2);
-            // target.parentNode.classList.add("active");
-            break;
-        default:
-            target.parentNode.classList.add("active");
-            fetchAllProducts(parseInt(target.innerHTML));
-            break;
-    }    
 });
+
 

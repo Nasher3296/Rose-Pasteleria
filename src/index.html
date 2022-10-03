@@ -114,9 +114,14 @@
       </div>
       <div class="container d-flex justify-content-center mt-2">
 
-        <nav aria-label="Page navigation example align-self-center">
+        <nav aria-label="Products Navigation">
+          <span hidden id="productsIndex">1</span>
           <ul class="pagination" id="paginationUl">
-            <li class="page-item"><a class="page-link">&lt</a></li>
+            <li class="page-item">
+              <a class="page-link" id="paginationPrev">&lt</a>
+              <span class="sr-only">Anterior</span>
+            </li>
+            <li class="page-item active"><a class="page-link" id="paginationLi1">1</a></li>
           </ul>
         </nav>
       </div>

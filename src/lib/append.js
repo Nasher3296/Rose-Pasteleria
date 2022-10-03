@@ -48,9 +48,11 @@ export function appendProductsList(p) {
 }
 
 export function appendProductsNav(n){
-    $('#paginationUl').append(`<li class="page-item active" id="paginationLi${1}"><a class="page-link">${1}</a></li>`);
     for(let i = 1 ; i < n ; i++){
-        $('#paginationUl').append(`<li class="page-item" id="paginationLi${i+1}"><a class="page-link">${i+1}</a></li>`);
+        $('#paginationUl').append(`<li class="page-item"><a class="page-link" id="paginationLi${i+1}">${i+1}</a></li>`);
     }
-    $('#paginationUl').append(`<li class="page-item"><a class="page-link">&gt</a></li>`);
+    $('#paginationUl').append(` <li class="page-item">
+                                    <a class="page-link" id="paginationNext">&gt</a>
+                                    <span class="sr-only">Siguiente</span>
+                                </li>`);
 }
