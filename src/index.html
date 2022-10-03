@@ -10,10 +10,26 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <title>Rose Pasteleria</title>
+  <style>
+    .btn-primary{
+      background-color: rgb(233, 58, 207);
+      border: 1px solid rgb(233, 58, 207);
+    }
+    .btn-outline-primary{
+      outline: 1px solid rgb(233, 58, 207);
+    }
+    .btn-primary:hover{
+      background-color: rgb(233, 58, 207);
+      border: 1px solid rgb(233, 58, 207);
+    }
+    .btn-outline-primary:hover{
+      outline: 1px solid rgb(233, 58, 207);
+    }
+  </style>
 </head>
 
 <body id="body">
-  <header class="d-flex sticky-top flex-column flex-md-row align-items-center fs-3 mb-0 py-md-0 px-md-4 bg-nav">
+  <header class="d-flex sticky-top flex-column flex-md-row align-items-center mb-0 py-md-0 px-md-4 bg-nav">
     <h5 class="brand-font nav-brand-fontsize"><a class="text-decoration-none text-dark" href="#welcome">Rose</a></h5>
     <nav class="navbar my-2 my-md-0 ml-md-auto mr-md-0 nav-brand-fontsize">
       <a class="text-decoration-none p-10" href="#myOrders">Mis pedidos</a>
@@ -93,18 +109,16 @@
       <h3 class="title-font h2-custom text-center">Productos</h3>
       <div class="top-bar container my-2">
         <div class="row">
-          <div class="col">
-          </div>
-          <div class="col-auto">
+          <div class="col-4">
             <div class="order-products">
               <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
-              <label class="btn btn-outline-primary descending" for="btn-check-outlined">Mayor precio</label><br>
+              <label class="btn btn-outline-primary descending text-dark" for="btn-check-outlined">Mayor precio</label><br>
             </div>
           </div>
-          <div class="col col-auto">
-            <div class="search">
-              <input type="text" placeholder="Buscar..." class="p-1 m-0">
-              <button type="submit" class="btn btn-primary px-2 m-0" ><i class="fa-solid fa-magnifying-glass"></i></button>
+          <div class="col-8">
+            <div class="search row mr-0 d-flex flex-row-reverse">
+              <button type="submit" class="btn btn-primary px-2 m-0 col-md-1 col-2" ><i class="fa-solid fa-magnifying-glass"></i></button>
+              <input type="text" placeholder="Buscar..." class="p-1 m-0 col-auto">
             </div>
           </div>
         </div>

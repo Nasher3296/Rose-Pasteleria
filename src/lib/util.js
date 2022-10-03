@@ -1,0 +1,7 @@
+/*
+Cambiar hoover del nav
+El nav en mobile que sea menos vertical
+Agregar copyright al footer
+Agregar modal al agregar productos
+Cambiar color botones azules
+*/

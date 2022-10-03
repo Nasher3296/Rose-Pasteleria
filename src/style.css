@@ -34,19 +34,24 @@ nav > a{
 }
 
 h5.nav-brand-fontsize {
-    font-size: max(6vw,70px);
+    font-size: max(4vw,70px);
     margin-bottom: 0;
 }
 .nav-brand-fontsize {
-    font-size: max(1.5vw,18px);
+    font-size: max(1.2vw,15px);
 }
 
 nav a{
     color: black;
+    padding: 0.5rem;
+
 }
 
 nav a:hover{
-    color: white;
+    color: rgb(64, 64, 66);
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 14px;
 }
 
 .max-vh-100 {
@@ -89,6 +94,10 @@ section{
     height: 50px;
     bottom: -35px;
     filter: blur(1.5rem);
+}
+
+.btn-agregar{
+    background-color: red;
 }
 
 .productName{

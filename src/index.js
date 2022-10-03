@@ -14,11 +14,11 @@ $('#orderBtn').click(function () {
     searchOrder($('#order-code').val());
 })
 
+//nav productos. Reescribir mas legible
 $('#paginationUl').click(function (event) {
     let currentElement = $('#productsIndex');
     let current = parseInt(currentElement.html());
-    let clicked = $('#'+event.target.id); //necesito la selecicon de jquery porque no funciona con el event.target
-    let indexClicked = clicked.parent().index();
+    let indexClicked = $('#'+event.target.id).parent().index();
     let list = $(this).children();
     let size = list.length;
     let prev = 0;
@@ -28,7 +28,6 @@ $('#paginationUl').click(function (event) {
     console.log('current :>> ', current);
     if(((indexClicked == prev && current == 1) || (indexClicked == next && current == size - 2))){ 
         $(this).children().get(current).classList.add("active");
-        fetchAllProducts(current);
     }else if(indexClicked == prev){
         currentElement.html(--current);
         fetchAllProducts(current);
@@ -42,8 +41,6 @@ $('#paginationUl').click(function (event) {
         fetchAllProducts(indexClicked);
         $(this).children().get(indexClicked).classList.add("active");
     }
-
-
 });
 
 
