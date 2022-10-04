@@ -1,5 +1,6 @@
 import { fetchOutstandingProducts, fetchAllProducts, fetchAmountOfProducts } from './lib/fetch.js';
 import { searchOrder } from './lib/other.js';
+import { noCollapse } from './lib/util.js';
 
 
 $(document).ready(function () {
@@ -7,6 +8,7 @@ $(document).ready(function () {
     fetchOutstandingProducts(3);
     fetchAllProducts(1);
     fetchAmountOfProducts();
+    noCollapse();
 });
 
 
@@ -44,3 +46,18 @@ $('#paginationUl').click(function (event) {
 });
 
 
+$( '#btn-check-outlined-mayMen' ).on( 'click', function() {
+    let label = $('#label-mayMen');
+    if( $( '#btn-check-outlined-mayMen' ).is(':checked') ){
+        label.html('Mayor a menor');
+    }else{
+        label.html('Menor a mayor');
+    }
+    let currentElement = $('#productsIndex');
+    let current = parseInt(currentElement.html());
+    fetchAllProducts(current);
+});
+
+$(window).resize(function() {
+    noCollapse();
+});

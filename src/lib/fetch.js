@@ -14,14 +14,26 @@ export function fetchOutstandingProducts(n) {
 
 export function fetchAllProducts(n) {
     n--;
+    max = 4;
     $(".products-list").html("");
     fetch("./db/products.JSON")
         .then(res => res.json())
         .then(data => {
-            [...data].sort((a,b) => a.price - b.price).slice((n * max), (n * max + max)).forEach(e => {
-                appendProductsList(e);
-            });
+            if( $( '#btn-check-outlined-mayMen' ).is(':checked') ){
+                [...data].sort((b,a) => a.price - b.price).slice((n * max), (n * max + max)).forEach(e => {
+                    appendProductsList(e);
+                });
+            } else {
+                [...data].sort((a,b) => a.price - b.price).slice((n * max), (n * max + max)).forEach(e => {
+                    appendProductsList(e);
+                });
+            }
+            
         })
+   
+    
+    
+    
 }
 
 export function fetchAmountOfProducts(){
