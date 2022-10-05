@@ -9,19 +9,25 @@
     --bg-color-sec: #f9acc9;
 }
 
-/* *, ::before, ::after{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-} */
 
 .button-collapse{
-    background-color: rgb(248, 183, 250);
+    background-color: rgba(255, 255, 255, 0.294);
     font-weight: bolder;
     height: 2rem;
-    width: 5rem;
+    width: 3rem;
     border: none;
     border-radius: 0.25rem;
+}
+
+.button-collapse:not(.collapsed) i{
+    transform: rotate(180deg);
+    transition: 0.5s ease-in-out all;
+}
+
+.button-collapse.collapsed i{
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out all;
+
 }
 
 
@@ -52,7 +58,8 @@ h5.nav-brand-fontsize {
 
 header a{
     color: black;
-    padding: 0.5rem;    
+    padding: 0.5rem;
+    transition: 0.2s ease-in-out all;  
 }
 
 header a:hover{
@@ -60,6 +67,7 @@ header a:hover{
     background-color: #fff;
     padding: 0.5rem;
     border-radius: 14px;
+    transition: 0.2s ease-in-out all;
 }
 
 .max-vh-100 {
@@ -175,6 +183,10 @@ section{
     .welcomeFloatBrand{
         font-size: 10rem;
     }
+
+    header h5{
+        text-align: center;
+    }
 }
 
 @media (min-width: 769px){
@@ -220,6 +232,7 @@ section{
     outline: 1px solid #dee2e6 !important;
   }
 
-
-
+  .modal-backdrop.fade.show{
+    opacity: 0%;
+}
 

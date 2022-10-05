@@ -11,11 +11,14 @@ export function appendOutstandingProduct(p) {
                     <div class="d-flex justify-content-between align-items-center mt-3">
                         <div><span class="text-dark">$${p.price}</span> <span class="text-muted">c/${p.unit}</span>
                         </div>
-                        <div><a href="#!" class="btn btn-primary btn-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            </svg> Agregar</a></div>
+                        <div>
+                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalAgregado">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg> Agregar
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -35,11 +38,12 @@ export function appendProductsList(p) {
                         <div><span class="text-dark">$${p.price}</span> <span class="text-muted">c/${p.unit}</span>
                         </div>
                         <div>
-                            <a href="#!" class="btn btn-primary btn-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            </svg> Agregar</a></div>
+                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalAgregado">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg> Agregar
+                            </button>
                         </div>
                     </div>
                 </div>

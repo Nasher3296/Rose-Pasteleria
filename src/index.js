@@ -1,6 +1,6 @@
 import { fetchOutstandingProducts, fetchAllProducts, fetchAmountOfProducts } from './lib/fetch.js';
 import { searchOrder } from './lib/other.js';
-import { noCollapse } from './lib/util.js';
+import { noCollapse, setCopyrightYear } from './lib/util.js';
 
 
 $(document).ready(function () {
@@ -9,6 +9,7 @@ $(document).ready(function () {
     fetchAllProducts(1);
     fetchAmountOfProducts();
     noCollapse();
+    setCopyrightYear();
 });
 
 
@@ -61,3 +62,4 @@ $( '#btn-check-outlined-mayMen' ).on( 'click', function() {
 $(window).resize(function() {
     noCollapse();
 });
+
