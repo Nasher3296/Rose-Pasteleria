@@ -1,5 +1,5 @@
 import { fetchOutstandingProducts, fetchAllProducts, fetchAmountOfProducts } from './lib/fetch.js';
-import { searchOrder } from './lib/other.js';
+import { searchOrder } from './lib/misPedidos.js';
 import { noCollapse, setCopyrightYear } from './lib/util.js';
 
 

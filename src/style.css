@@ -236,3 +236,19 @@ section{
     opacity: 0%;
 }
 
+#modalCarrito .modal-dialog{
+    position: relative;
+    margin-right: 1rem;
+}
+
+#modalCarrito .modal-content{
+    position: absolute;
+    top: 20vh;
+
+    width: 100%;
+    height: fit-content;
+}
+
+.subtotalCarrito::before{
+    content: "$";
+}

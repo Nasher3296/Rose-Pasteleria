@@ -8,7 +8,7 @@ export function searchOrder(code){
                     <h3>Resumen de pedido: </h3>
                     <div class="my-order-list" id="myOrderList">
                         <div class="row fw-bold fs-5">
-                            <div class="col-md-10 col-8 main-col-mol">Product</div>
+                            <div class="col-md-10 col-8 main-col-mol">Producto</div>
                             <div class="col">Cantidad</div>
                             <div class="col">Subtotal</div>
                         </div>
