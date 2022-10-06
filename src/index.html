@@ -193,10 +193,21 @@
               <div class="col-6">Torta simple</div>
               <div class="col-3 d-flex">
                 <button class="col-3" onclick="restarUno(1)">-</button>
-                <input id="cantidad1" class="col-4" type="number" name="cantidad" id="" value="1">
+                <input type="hidden" id="precio1" name="price" value="4000">
+                <input id="cantidad1" class="col-4 text-center" type="number" name="cantidad" id="" value="1" min="1" onchange="updateSubt(1)" required>
                 <button class="col-3" onclick="sumarUno(1)">+</button>
               </div>
-              <div class="col-3 subtotalCarrito">4000</div>
+              <div class="col-3 subtotalCarrito" id="subtotal1">4000</div>
+            </div>
+            <div class="row">
+              <div class="col-6">Torta simple</div>
+              <div class="col-3 d-flex">
+                <button class="col-3" onclick="restarUno(2)">-</button>
+                <input type="hidden" id="precio2" name="price" value="5000">
+                <input id="cantidad2" class="col-4 text-center" type="number" name="cantidad" id="" value="1" min="1" onchange="updateSubt(2)" required>
+                <button class="col-3" onclick="sumarUno(2)">+</button>
+              </div>
+              <div class="col-3 subtotalCarrito" id="subtotal2">5000</div>
             </div>
           </div>
         </div>

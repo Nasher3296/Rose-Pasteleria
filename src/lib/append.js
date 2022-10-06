@@ -1,7 +1,7 @@
 
 export function appendOutstandingProduct(p) {
     $("#outstandingProductsContainer").append(`
-        <div class="col">
+        <div class="col"  id="product${p.id}">
             <div class="card card-product overflow-hidden">
                 <div class="card-body">
                     <div class="outstanding-card"><span class="outstanding-text">Destacado</span></div>
@@ -12,7 +12,7 @@ export function appendOutstandingProduct(p) {
                         <div><span class="text-dark">$${p.price}</span> <span class="text-muted">c/${p.unit}</span>
                         </div>
                         <div>
-                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalAgregado">
+                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalAgregado" onclick="agregarACarrito(${p.id})">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
                                 <line x1="12" y1="5" x2="12" y2="19"></line>
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -28,7 +28,7 @@ export function appendOutstandingProduct(p) {
 
 export function appendProductsList(p) {
     $(".products-list").append(`
-        <div class="col">
+        <div class="col" id="product${p.id}">
             <div class="card card-product overflow-hidden">
                 <div class="card-body">
                     <a href="#!"> <img src="./media/products/example.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid img-center w-100"></a>
@@ -38,7 +38,7 @@ export function appendProductsList(p) {
                         <div><span class="text-dark">$${p.price}</span> <span class="text-muted">c/${p.unit}</span>
                         </div>
                         <div>
-                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalAgregado">
+                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalAgregado"  onclick="agregarACarrito(${p.id})">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
                                 <line x1="12" y1="5" x2="12" y2="19"></line>
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
