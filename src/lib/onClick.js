@@ -34,17 +34,26 @@ function updateSubt(id){
     subtotal.html(cantidad * precio);
 }
 
-function agregarACarrito(id){
-    console.log('No se puede agregar sin el servidor');
-    fetch("./db/session.JSON")
-    .then(res => res.json())
-    .then(data => {
-        data[0].cart.forEach(id => {
-            $(`#product${id}`).each(function(){
-                // $(`${this}`).html('mogus');
-                console.log(this);
-            });
-        })
-    });
-    
+function agregarACarrito(prod){
+    let text = prod.children[0].innerHTML;
+    let [id, nombre, categoria, precio, unidad] = text.split('/');
+    if(!($(`#carritoModalContainer #${id}id`)[0])){
+        $('#carritoModalContainer').append(`
+            <div class="row" id="${id}id">
+                <div class="col-1"><button class="btn btn-close" onclick="removeFromCart(this)"></button></div>
+                <div class="col-5">${nombre}</div>
+                <div class="col-3 d-flex">
+                <button class="col-3" onclick="restarUno(${id})">-</button>
+                <input type="hidden" id="precio${id}" name="price" value="${precio}">
+                <input id="cantidad${id}" class="col-4 text-center" type="number" name="cantidad" id="" value="1" min="1" onchange="updateSubt(${id})" required>
+                <button class="col-3" onclick="sumarUno(${id})">+</button>
+                </div>
+                <div class="col-3 subtotalCarrito" id="subtotal${id}">${precio}</div>
+            </div>
+        `);
+    }   
+}
+
+function removeFromCart(element){
+    element.parentNode.parentNode.remove();
 }

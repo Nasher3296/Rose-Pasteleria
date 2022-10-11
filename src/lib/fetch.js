@@ -14,7 +14,6 @@ export function fetchOutstandingProducts(n) {
 
 export function fetchAllProducts(n) {
     n--;
-    max = 4;
     $(".products-list").html("");
     fetch("./db/products.JSON")
         .then(res => res.json())

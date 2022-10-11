@@ -119,7 +119,7 @@
         </div>
       </div>
       <div class="container">
-        <div class="products-list row g-4 row-cols-lg-4 row-cols-md-3 row-cols-2"></div>
+        <div class="products-list row g-4 row-cols-lg-4 row-cols-md-3 row-cols-2" id="products-list"></div>
       </div>
       <div class="container d-flex justify-content-center mt-2">
 
@@ -189,36 +189,61 @@
               <div class="col-3">Cantidad</div>
               <div class="col-3">Subtotal</div>
             </div>
-            <div class="row">
-              <div class="col-6">Torta simple</div>
-              <div class="col-3 d-flex">
-                <button class="col-3" onclick="restarUno(1)">-</button>
-                <input type="hidden" id="precio1" name="price" value="4000">
-                <input id="cantidad1" class="col-4 text-center" type="number" name="cantidad" id="" value="1" min="1" onchange="updateSubt(1)" required>
-                <button class="col-3" onclick="sumarUno(1)">+</button>
-              </div>
-              <div class="col-3 subtotalCarrito" id="subtotal1">4000</div>
-            </div>
-            <div class="row">
-              <div class="col-6">Torta simple</div>
-              <div class="col-3 d-flex">
-                <button class="col-3" onclick="restarUno(2)">-</button>
-                <input type="hidden" id="precio2" name="price" value="5000">
-                <input id="cantidad2" class="col-4 text-center" type="number" name="cantidad" id="" value="1" min="1" onchange="updateSubt(2)" required>
-                <button class="col-3" onclick="sumarUno(2)">+</button>
-              </div>
-              <div class="col-3 subtotalCarrito" id="subtotal2">5000</div>
-            </div>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
+          <button class="btn btn-primary" data-bs-target="#modalConfirmar" data-bs-toggle="modal" data-bs-dismiss="modal">Continuar</button>
         </div>
       </div>
     </div>
   </div>
-
+  <!-- Confirmar compra -->
+  <div class="modal fade" id="modalConfirmar"  tabindex="-1" aria-labelledby="modalConfirmarLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalConfirmarLabel">Confirmar orden</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modalConfirmarBody">
+          <!-- <form action="" method="POST"> -->
+            <div class="input-group">
+              <span class="input-group-text">Nombre</span>
+              <input type="text" aria-label="First name" class="form-control" required>
+            </div>
+            <div class="input-group">
+              <span class="input-group-text">Apellido</span>
+              <input type="text" aria-label="First name" class="form-control" required>
+            </div>
+            <div class="input-group">
+              <span class="input-group-text">Mail</span>
+              <input type="mail" aria-label="First name" class="form-control" required>
+            </div>
+            <div class="input-group">
+              <span class="input-group-text">DNI</span>
+              <input type="number" aria-label="First name" class="form-control" required>
+            </div>
+          <!-- </form> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-primary" data-bs-target="#modalConfirmado" data-bs-toggle="modal" data-bs-dismiss="modal">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Compra confirmada -->
+  <div class="modal fade" id="modalConfirmado" tabindex="-1" aria-labelledby="modalConfirmadoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-success text-light">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalConfirmadoLabel">Orden registrada</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

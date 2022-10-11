@@ -28,7 +28,6 @@ $('#paginationUl').click(function (event) {
     let next = size - 1;
     //caso donde se esta en el extremo y se quiere avanzar
     list.removeClass("active");
-    console.log('current :>> ', current);
     if(((indexClicked == prev && current == 1) || (indexClicked == next && current == size - 2))){ 
         $(this).children().get(current).classList.add("active");
     }else if(indexClicked == prev){
@@ -62,4 +61,5 @@ $( '#btn-check-outlined-mayMen' ).on( 'click', function() {
 $(window).resize(function() {
     noCollapse();
 });
+
 

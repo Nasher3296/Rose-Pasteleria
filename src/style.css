@@ -234,25 +234,26 @@ section{
 
   .modal-backdrop.fade.show{
     opacity: 0%;
-}
+    }
 
-#modalCarrito .modal-dialog{
-    position: relative;
-    margin-right: 1rem;
-}
 
-#modalCarrito .modal-content{
-    position: absolute;
-    top: 20vh;
+    .modal-dialog{
+        margin: 0;
+    }
 
-    width: 100%;
-    height: fit-content;
-}
+    #modalCarrito .modal-content{
+        width: fit-content;
+        max-width: max-content;
+        min-width: 400px;
+    }
 
-.subtotalCarrito::before{
-    content: "$";
-}
+    .subtotalCarrito::before{
+        content: "$";
+    }
 
+    #modalConfirmarBody div{
+        margin-bottom: 0.5rem;
+    }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
