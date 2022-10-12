@@ -1,7 +1,6 @@
-import { fetchOutstandingProducts, fetchAllProducts, fetchAmountOfProducts } from './lib/fetch.js';
+import { fetchOutstandingProducts, fetchAllProducts, fetchAmountOfProducts, fetchAmountOfProductsText } from './lib/fetch.js';
 import { searchOrder } from './lib/misPedidos.js';
 import { noCollapse, setCopyrightYear } from './lib/util.js';
-
 
 $(document).ready(function () {
     //Momentaneamente los productos destacados son 3 elegidos aleatoriamente
@@ -62,4 +61,24 @@ $(window).resize(function() {
     noCollapse();
 });
 
+$('#buscarBtn').click(function(){
+    $('#cancelarBuscarBtn').removeClass('d-none');
+    $('#cancelarBuscarBtn').addClass('d-flex');
+    let input = $('#buscarInput');
+    $('#buscarHidden').val(input.val());
+    $('#paginationUl').children().removeClass("active");
+    $('#paginationUl').children().get(1).classList.add("active");
+    fetchAmountOfProductsText();
+    fetchAllProducts(1);
+});
 
+$('#cancelarBuscarBtn').click(function(){
+    $('#cancelarBuscarBtn').addClass('d-none');
+    $('#cancelarBuscarBtn').removeClass('d-flex');
+    $('#buscarInput').val('');
+    $('#buscarHidden').val('');
+    $('#paginationUl').children().removeClass("active");
+    $('#paginationUl').children().get(1).classList.add("active");
+    fetchAmountOfProducts();
+    fetchAllProducts(1);
+});

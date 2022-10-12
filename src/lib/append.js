@@ -56,8 +56,16 @@ export function appendProductsList(p) {
 }
 
 export function appendProductsNav(n){
-    for(let i = 1 ; i < n ; i++){
-        $('#paginationUl').append(`<li class="page-item"><a class="page-link" id="paginationLi${i+1}">${i+1}</a></li>`);
+    $('#paginationUl').empty();
+    $('#paginationUl').append(` <li class="page-item">
+                                    <a class="page-link" id="paginationPrev">&lt</a>
+                                    <span class="sr-only">Anterior</span>
+                                </li>`);
+    for(let i = 0 ; i < n ; i++){
+        if(i != 0)
+            $('#paginationUl').append(`<li class="page-item"><a class="page-link" id="paginationLi${i+1}">${i+1}</a></li>`);
+    else 
+        $('#paginationUl').append(`<li class="active page-item"><a class="page-link" id="paginationLi${i+1}">${i+1}</a></li>`);
     }
     $('#paginationUl').append(` <li class="page-item">
                                     <a class="page-link" id="paginationNext">&gt</a>

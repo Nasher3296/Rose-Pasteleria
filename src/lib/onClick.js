@@ -13,13 +13,13 @@ function restarUno(id){
 }
 
 
-$('input[type=number]').blur(function(event) {    
-    event.target.checkValidity();
-}).bind('invalid', function(event) {
-    event.target.value = 1;
-    let id = event.target.id.match(/cantidad(.+)/)[1];
-    doOnChange(id);
-});
+
+function blurCant(id){
+    let element = document.getElementById(`cantidad${id}`);
+    if(element.value < 1)
+        element.value = 1;
+    doOnChange(id)
+}
 
 function doOnChange(id){
     let element = document.getElementById(`cantidad${id}`);
@@ -45,7 +45,7 @@ function agregarACarrito(prod){
                 <div class="col-3 d-flex">
                 <button class="col-3" onclick="restarUno(${id})">-</button>
                 <input type="hidden" id="precio${id}" name="price" value="${precio}">
-                <input id="cantidad${id}" class="col-4 text-center" type="number" name="cantidad" id="" value="1" min="1" onchange="updateSubt(${id})" required>
+                <input id="cantidad${id}" class="col-4 text-center inputNumber" type="number" name="cantidad" id="" value="1" min="1" onblur="blurCant(${id})" onchange="updateSubt(${id})" required>
                 <button class="col-3" onclick="sumarUno(${id})">+</button>
                 </div>
                 <div class="col-3 subtotalCarrito" id="subtotal${id}">${precio}</div>

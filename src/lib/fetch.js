@@ -14,25 +14,22 @@ export function fetchOutstandingProducts(n) {
 
 export function fetchAllProducts(n) {
     n--;
+    let text = $('#buscarHidden').val();
     $(".products-list").html("");
     fetch("./db/products.JSON")
         .then(res => res.json())
         .then(data => {
             if( $( '#btn-check-outlined-mayMen' ).is(':checked') ){
-                [...data].sort((b,a) => a.price - b.price).slice((n * max), (n * max + max)).forEach(e => {
+                [...data].filter(e => e.name.toLowerCase().includes(text.toLowerCase()) || text == "").sort((b,a) => a.price - b.price).slice((n * max), (n * max + max)).forEach(e => {
                     appendProductsList(e);
                 });
             } else {
-                [...data].sort((a,b) => a.price - b.price).slice((n * max), (n * max + max)).forEach(e => {
+                [...data].filter(e => e.name.toLowerCase().includes(text.toLowerCase()) || text == "").sort((a,b) => a.price - b.price).slice((n * max), (n * max + max)).forEach(e => {
                     appendProductsList(e);
                 });
             }
             
         })
-   
-    
-    
-    
 }
 
 export function fetchAmountOfProducts(){
@@ -41,4 +38,21 @@ export function fetchAmountOfProducts(){
         .then(data => {
             appendProductsNav(Math.ceil([...data].length)/max);
             });
+}
+
+export function fetchAmountOfProductsText(){
+    let text = $('#buscarHidden').val();
+    fetch("./db/products.JSON")
+        .then(res => res.json())
+        .then(data => {
+            appendProductsNav(
+                Math.ceil(
+                    [...data].filter(
+                        e => e.name.toLowerCase().includes(
+                            text.toLowerCase()
+                        )
+                    ).length/max
+                )
+            );
+        });
 }

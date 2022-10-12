@@ -12,6 +12,7 @@ export function setCopyrightYear(){
     let year = date.getFullYear();
     $('#copyright').html(text.replace('YEAR', year));
 }
+
 /*
 Cambiar hoover del nav
 

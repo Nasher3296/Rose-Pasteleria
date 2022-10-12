@@ -244,7 +244,7 @@ section{
     #modalCarrito .modal-content{
         width: fit-content;
         max-width: max-content;
-        min-width: 400px;
+        min-width: 100%;
     }
 
     .subtotalCarrito::before{
@@ -259,7 +259,7 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    margin: 0; 
 }
 
 input[type=number] {

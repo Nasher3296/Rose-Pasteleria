@@ -112,8 +112,10 @@
           </div>
           <div class="col-8">
             <div class="search row mr-0 d-flex flex-row-reverse">
-              <button type="submit" class="btn btn-primary px-2 m-0 col-md-1 col-2" ><i class="fa-solid fa-magnifying-glass"></i></button>
-              <input type="text" placeholder="Buscar..." class="p-1 m-0 col-auto">
+              <button type="submit" class="btn btn-primary px-2 m-0 col-md-1 col-2" id="buscarBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+              <input type="text" placeholder="Buscar..." class="p-1 m-0 col-auto" id="buscarInput">
+              <button class="btn btn-close d-none align-self-center" id="cancelarBuscarBtn"></button>
+              <input type="hidden" id="buscarHidden">
             </div>
           </div>
         </div>
@@ -126,11 +128,6 @@
         <nav aria-label="Products Navigation">
           <span hidden id="productsIndex">1</span>
           <ul class="pagination" id="paginationUl">
-            <li class="page-item">
-              <a class="page-link" id="paginationPrev">&lt</a>
-              <span class="sr-only">Anterior</span>
-            </li>
-            <li class="page-item active"><a class="page-link" id="paginationLi1">1</a></li>
           </ul>
         </nav>
       </div>
